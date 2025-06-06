@@ -13,7 +13,6 @@ chkconfig httpd on
 service httpd stop
 
 iptables -F
-rm -rf /var/www/html
 chmod -R 755 /var/www/html
 setenforce 0
 
@@ -32,7 +31,7 @@ service mysqld start
 mysql -u root -e "SHOW DATABASES";
 
 # Download Starter Content
-cd /vagrant
+cd /var/www/html
 sudo -u vagrant wget -q https://raw.githubusercontent.com/Creationsv2/vagrant/refs/heads/main/files/index.html
 sudo -u vagrant wget -q https://raw.githubusercontent.com/Creationsv2/vagrant/refs/heads/main/files/info.php
 
